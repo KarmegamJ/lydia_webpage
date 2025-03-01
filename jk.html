@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>lydia_webpage</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href=".output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Demo styles -->
+    <style>
+      .gilda-display-regular {
+        font-family: "Gilda Display", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .barlow-condensed-regular {
+        font-family: "Barlow Condensed", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: transparent;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+      .tiledBackground {
+        background-size: 5px;
+      }
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="fixed top-0 z-50 w-full barlow-condensed-regular">
+      <div
+        class="flex bg-[#1E1E1E] py-1 md:py-2 md:px-36 place-content-center md:justify-end"
+      >
+        <div class="flex items-center">
+          <img src="images/mailicon.svg" alt="" class="md:w-[30px] w-4" />
+          <p class="px-3 md:text-[18px] text-sm text-white font-light">
+            info@lydiahotel.gr
+          </p>
+        </div>
+        <div class="flex items-center">
+          <img src="images/phoneicon.svg" alt="" class="md:w-[30px] w-4" />
+          <p class="px-3 md:text-[18px] text-sm text-white font-light">
+            (+30) 2241022871-2
+          </p>
+        </div>
+      </div>
+      <div
+        id="navbar"
+        class="flex items-center justify-between px-4 py-6 uppercase bg-transparent md:px-36"
+      >
+        <img src="images/logo.png" alt="logo" class="w-[100px] md:w-[250px]" />
+        <ul class="hidden gap-8 text-xl text-white md:flex">
+          <li>home</li>
+          <li>rooms</li>
+          <li>gallery</li>
+          <li>Contact Us</li>
+        </ul>
+        <div class="flex gap-3">
+          <button
+            class="flex items-center gap-1 p-1 bg-white border border-transparent md:p-3 md:text-xl hover:border-white hover:bg-black hover:text-white"
+          >
+            Book now
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="{1.5}"
+              stroke="currentColor"
+              className="size-6"
+              class="w-3 md:w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </button>
+          <button
+            class="flex items-center gap-1 p-1 text-white border border-white md:text-xl md:p-3 backdrop-blur-sm hover:bg-white hover:text-black"
+          >
+            Hotel with flight
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="{1.5}"
+              stroke="currentColor"
+              className="size-6"
+              class="w-3 md:w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <section class="-mt-[110px] relative -z-50">
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper h-[850px] md:h-[1000px]">
+          <div class="swiper-slide">
+            <img src="images/landing1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/landing2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/landing3.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="absolute top-72 md:left-[480px]">
+      <div
+        class="text-center text-white md:py-24 barlow-condensed-regular place-items-center"
+      >
+        <p class="text-base tracking-widest md:text-2xl">Indoors & Outdoors</p>
+        <h3
+          class="gilda-display-regular text-[55px] md:text-[65px] md:w-[550px] tracking-wide"
+        >
+          Enjoy A Luxury Experience
+        </h3>
+        <button
+          class="flex items-center gap-2 px-5 py-3 my-5 text-sm tracking-widest border border-white md:text-xl backdrop-blur-sm"
+        >
+          ROOMS & SUITS
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="{1.5}"
+            stroke="currentColor"
+            className="size-6"
+            class="w-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
+    <section>
+      <div
+        class="barlow-condensed-regular text-base bg-[#F5F5F5] w-auto md:w-[1200px] p-10 place-self-center -mt-24"
+      >
+        <div class="text-center">
+          <p class="p-2 font-light tracking-wider md:p-5">
+            ONE OF THE BEST PLACES TO RELAX & ENJOY
+          </p>
+          <h3 class="text-3xl md:text-5xl gilda-display-regular">
+            Lydia City Hotel Rhodes
+          </h3>
+        </div>
+        <form
+          action="submit"
+          class="flex flex-wrap place-content-center md:place-content-start md:w-auto"
+        >
+          <div class="flex flex-col gap-1 p-2 font-light tracking-wider md:p-5">
+            <label for="name">Your Name:</label
+            ><input
+              type="text"
+              class="px-2 py-2 w-[230px] h-[40px] bg-white"
+              placeholder="your name "
+            />
+          </div>
+          <div class="flex flex-col gap-1 p-2 font-light tracking-wider md:p-5">
+            <label for="name">Email:</label
+            ><input
+              type="text"
+              class="px-2 py-2 w-[230px] h-[40px] bg-white"
+              placeholder="Your Email ID "
+            />
+          </div>
+          <div class="flex flex-col gap-1 p-2 font-light tracking-wider md:p-5">
+            <label for="name">Check In:</label
+            ><input
+              type="date"
+              class="px-2 py-2 w-[230px] h-[40px] bg-white"
+              placeholder="Date "
+            />
+          </div>
+          <div class="flex flex-col gap-1 p-2 font-light tracking-wider md:p-5">
+            <label for="name">Check Out:</label
+            ><input
+              type="date"
+              class="px-2 py-2 w-[230px] text-opacity-35 h-[40px] bg-white"
+              placeholder="Date "
+            />
+          </div>
+          <div class="flex flex-col gap-1 p-2 font-light tracking-wider md:p-5">
+            <label for="name">Rooms:</label
+            ><select
+              name="select"
+              id="Select"
+              class="px-2 py-2 w-[230px] text-opacity-35 h-[40px] bg-white"
+              placeholder="select"
+            >
+              <option value="" class="" disabled>Select room</option>
+              <option value="">Single room</option>
+              <option value="">Standard double room</option>
+              <option value="">Standard twin room</option>
+              <option value="">Deluxe double room</option>
+              <option value="">Studio room or apartment</option>
+              <option value="">Junior suite</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1 p-2 font-light tracking-wider md:p-5">
+            <label for="name">Adults:</label
+            ><select
+              name="select"
+              id="Select"
+              class="px-2 py-2 w-[230px] text-opacity-35 h-[40px] bg-white"
+              placeholder="select"
+            >
+              <option value="" class="" disabled>Select members</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+              <option value="">6</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1 p-2 font-light tracking-wider md:p-5">
+            <label for="name">Children:</label
+            ><select
+              name="select"
+              id="Select"
+              class="px-2 py-2 w-[230px] text-opacity-35 h-[40px] bg-white"
+              placeholder="select"
+            >
+              <option value="" class="" disabled>Select members</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+              <option value="">6</option>
+            </select>
+          </div>
+        </form>
+        <div class="md:p-5 place-items-center md:place-items-start">
+          <div class="py-2 md:py-3">
+            <input type="checkbox" class="gap-2" />i have read and agree with
+            the terms
+          </div>
+          <button class="w-[200px] py-2 bg-[#1E1E1E] text-white">SEND</button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="justify-between px-5 py-10 md:flex md:py-20 md:px-44">
+        <div class="self-center barlow-condensed-regular">
+          <p class="py-2 font-light tracking-wider uppercase">
+            about lydia hotel
+          </p>
+          <h3 class="text-3xl md:text-5xl gilda-display-regular">
+            Enoy a luxury experience
+          </h3>
+          <p
+            class="w-auto md:w-[500px] py-4 md:py-10 text-justify text-base md:text-lg text-[#535353]"
+          >
+            Lorem ipsum dolor sit amet consectetur. Pretium gravida non integer
+            magna. Nibh facilisi eget justo tristique. Nunc purus vehicula
+            curabitur egestas. Vel eget est semper ut. Nibh duis nec in at nulla
+            sit. Congue ut commodo eu nunc. Tincidunt proin nec lobortis
+            imperdiet auctor id aliquet. Morbi dignissim scelerisque est erat.
+            <br />Tincidunt eu porta vivamus id magnis tellus volutpat aliquet.
+            Velit ut non vitae ornare. Pretium interdum volutpat bibendum
+            malesuada odio nulla tellus. Tortor cursus quam elit sagittis in.
+            Arcu ut magna arcu sit. Leo dignissim neque luctus ornare volutpat
+            neque. Morbi integer aliquam fermentum diam ac. Nunc.
+          </p>
+        </div>
+        <div><img src="images/hotelpic.png" alt="" class="md:w-[400px]" /></div>
+      </div>
+    </section>
+    <section>
+      <div class="bg-[#F5F5F5]">
+        <div class="px-5 py-4 md:py-16 place-self-start md:place-self-center">
+          <div class="pb-10">
+            <p
+              class="py-2 font-light tracking-wider uppercase barlow-condensed-regular"
+            >
+              what we provide
+            </p>
+            <h3 class="text-3xl md:text-5xl gilda-display-regular">
+              Our Services
+            </h3>
+          </div>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 md:w-[1150px] gap-2 md:gap-11"
+          >
+            <div
+              class="md:w-[350px] hover:bg-none hover:bg-[#D0A546] hover:shadow-md hover:rounded-md p-5 border border-[#D9D9D9] bg-[url(images/rs1.png)] bg-origin-content bg-contain bg-no-repeat bg-center"
+            >
+              <img
+                src="images/roomservice.svg"
+                alt=""
+                class="w-[40px] mt-2 tiledBackground"
+              />
+              <h3 class="py-2 text-xl gilda-display-regular">Room Services</h3>
+              <p
+                class="text-xs md:text-[14.5px] barlow-condensed-regular text-[#535353] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur. Pretium gravida non
+                integer magna. Nibh facilisi eget justo tristique. Nunc purus
+                vehicula curabitur egestas. Vel eget est semper ut. Nibh duis
+                nec in at nulla sit. Congue ut commodo eu nunc. Tincidunt proin
+                nec lobortis
+              </p>
+            </div>
+            <div
+              class="md:w-[350px] hover:bg-none hover:bg-[#D0A546] hover:shadow-md hover:rounded-md p-5 border border-[#D9D9D9] bg-[url(images/lb1.png)] bg-origin-content bg-contain bg-no-repeat bg-center"
+            >
+              <img
+                src="images/bathroom.svg"
+                alt=""
+                class="w-[40px] mt-2 tiledBackground"
+              />
+              <h3 class="py-2 text-xl gilda-display-regular">
+                Luxury Bathroom
+              </h3>
+              <p
+                class="barlow-condensed-regular text-xs md:text-[14.5px] text-[#535353] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur. Pretium gravida non
+                integer magna. Nibh facilisi eget justo tristique. Nunc purus
+                vehicula curabitur egestas. Vel eget est semper ut. Nibh duis
+                nec in at nulla sit. Congue ut commodo eu nunc. Tincidunt proin
+                nec lobortis
+              </p>
+            </div>
+            <div
+              class="md:w-[350px] hover:bg-none hover:bg-[#D0A546] hover:shadow-md hover:rounded-md p-5 border border-[#D9D9D9] bg-[url(images/tv2.png)] bg-origin-content bg-contain bg-no-repeat bg-center"
+            >
+              <img
+                src="images/tv.svg"
+                alt=""
+                class="w-[40px] mt-2 tiledBackground"
+              />
+              <h3 class="py-2 text-xl gilda-display-regular">
+                Setellite Television Set
+              </h3>
+              <p
+                class="barlow-condensed-regular text-xs md:text-[14.5px] text-[#535353] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur. Pretium gravida non
+                integer magna. Nibh facilisi eget justo tristique. Nunc purus
+                vehicula curabitur egestas. Vel eget est semper ut. Nibh duis
+                nec in at nulla sit. Congue ut commodo eu nunc. Tincidunt proin
+                nec lobortis
+              </p>
+            </div>
+            <div
+              class="md:w-[350px] hover:bg-none hover:bg-[#D0A546] hover:shadow-md hover:rounded-md p-5 border border-[#D9D9D9] bg-[url(images/bf1.png)] bg-origin-content bg-contain bg-no-repeat bg-center"
+            >
+              <img
+                src="images/breakfast.svg"
+                alt=""
+                class="w-[40px] mt-2 tiledBackground"
+              />
+              <h3 class="py-2 text-xl gilda-display-regular">Breakfast</h3>
+              <p
+                class="barlow-condensed-regular text-xs md:text-[14.5px] text-[#535353] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur. Pretium gravida non
+                integer magna. Nibh facilisi eget justo tristique. Nunc purus
+                vehicula curabitur egestas. Vel eget est semper ut. Nibh duis
+                nec in at nulla sit. Congue ut commodo eu nunc. Tincidunt proin
+                nec lobortis
+              </p>
+            </div>
+            <div
+              class="md:w-[350px] hover:bg-none hover:bg-[#D0A546] hover:shadow-md hover:rounded-md p-5 border border-[#D9D9D9] bg-[url(images/wf1.png)] bg-origin-content bg-contain bg-no-repeat bg-center"
+            >
+              <img
+                src="images/wifi.svg"
+                alt=""
+                class="w-[40px] mt-2 tiledBackground"
+              />
+              <h3 class="py-2 text-xl gilda-display-regular">WiFi</h3>
+              <p
+                class="barlow-condensed-regular text-xs md:text-[14.5px] text-[#535353] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur. Pretium gravida non
+                integer magna. Nibh facilisi eget justo tristique. Nunc purus
+                vehicula curabitur egestas. Vel eget est semper ut. Nibh duis
+                nec in at nulla sit. Congue ut commodo eu nunc. Tincidunt proin
+                nec lobortis
+              </p>
+            </div>
+            <div
+              class="md:w-[350px] hover:bg-[#D0A546] hover:bg-none hover:shadow-md hover:rounded-md p-5 border border-[#D9D9D9] bg-[url(images/mb1.png)] bg-origin-content bg-contain bg-no-repeat bg-center"
+            >
+              <img
+                src="images/bar.svg"
+                alt=""
+                class="w-[40px] mt-2 tiledBackground"
+              />
+              <h3 class="py-2 text-xl gilda-display-regular">Mini Bar</h3>
+              <p
+                class="barlow-condensed-regular text-xs md:text-[14.5px] text-[#535353] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur. Pretium gravida non
+                integer magna. Nibh facilisi eget justo tristique. Nunc purus
+                vehicula curabitur egestas. Vel eget est semper ut. Nibh duis
+                nec in at nulla sit. Congue ut commodo eu nunc. Tincidunt proin
+                nec lobortis
+              </p>
+            </div>
+            <div
+              class="md:w-[350px] hover:bg-[#D0A546] hover:bg-none hover:shadow-md hover:rounded-md p-5 border border-[#D9D9D9] bg-[url(images/bl1.png)] bg-origin-content bg-contain bg-no-repeat bg-center"
+            >
+              <img
+                src="images/balcony.svg"
+                alt=""
+                class="w-[40px] mt-2 tiledBackground"
+              />
+              <h3 class="py-2 text-xl gilda-display-regular">
+                Double Glazed Windows And Balcony
+              </h3>
+              <p
+                class="barlow-condensed-regular text-xs md:text-[14.5px] text-[#535353] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur. Pretium gravida non
+                integer magna. Nibh facilisi eget justo tristique. Nunc purus
+                vehicula curabitur egestas. Vel eget est semper ut. Nibh duis
+                nec in at nulla sit. Congue ut commodo eu nunc. Tincidunt proin
+                nec lobortis
+              </p>
+            </div>
+            <div
+              class="md:w-[350px] hover:bg-[#D0A546] hover:bg-none hover:shadow-md hover:rounded-md p-5 border border-[#D9D9D9] bg-[url(images/fl1.png)] bg-origin-content bg-contain bg-no-repeat bg-center"
+            >
+              <img
+                src="images/friend.svg"
+                alt=""
+                class="w-[40px] mt-2 tiledBackground"
+              />
+              <h3 class="py-2 text-xl gilda-display-regular">Friendliness</h3>
+              <p
+                class="barlow-condensed-regular text-xs md:text-[14.5px] text-[#535353] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur. Pretium gravida non
+                integer magna. Nibh facilisi eget justo tristique. Nunc purus
+                vehicula curabitur egestas. Vel eget est semper ut. Nibh duis
+                nec in at nulla sit. Congue ut commodo eu nunc. Tincidunt proin
+                nec lobortis
+              </p>
+            </div>
+            <div
+              class="md:w-[350px] hover:bg-[#D0A546] hover:bg-none hover:shadow-md hover:rounded-md p-5 border border-[#D9D9D9] bg-[url(images/sd1.png)] bg-origin-content bg-contain bg-no-repeat bg-center"
+            >
+              <img
+                src="images/deck.svg"
+                alt=""
+                class="w-[40px] mt-2 tiledBackground"
+              />
+              <h3 class="py-2 text-xl gilda-display-regular">Sun Deck Area</h3>
+              <p
+                class="barlow-condensed-regular text-xs md:text-[14.5px] text-[#535353] text-justify"
+              >
+                Lorem ipsum dolor sit amet consectetur. Pretium gravida non
+                integer magna. Nibh facilisi eget justo tristique. Nunc purus
+                vehicula curabitur egestas. Vel eget est semper ut. Nibh duis
+                nec in at nulla sit. Congue ut commodo eu nunc. Tincidunt proin
+                nec lobortis
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="px-5 md:m-24">
+        <div class="py-6 md:pl-24 md:pb-12">
+          <p
+            class="py-2 font-light tracking-wider uppercase barlow-condensed-regular"
+          >
+            hotel's beauty
+          </p>
+          <h3 class="text-3xl md:text-5xl gilda-display-regular">
+            Our Gallery
+          </h3>
+        </div>
+        <div class="place-items-center">
+          <img src="images/Group 14.png" alt="gallery" class="w-[1120px]" />
+        </div>
+      </div>
+    </section>
+    <section class="md:relative">
+      <div class="md:relative mt-4 md:mt-[400px]">
+        <div
+          class="flex gap-8 md:gap-20 justify-between md:justify-start mt-10 bg-[#1E1E1E] text-white p-8 md:p-20"
+        >
+          <div>
+            <h1
+              class="w-auto pb-2 text-lg md:text-2xl md:pb-6 gilda-display-regular"
+            >
+              Quick Links
+            </h1>
+            <ul
+              class="text-base md:leading-10 md:text-xl font-extralight barlow-condensed-regular"
+            >
+              <li>Home</li>
+              <li>About Us</li>
+              <li>Our Properties</li>
+              <li>Testimonials</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+          <div>
+            <h1 class="pb-2 text-lg md:pb-6 md:text-2xl gilda-display-regular">
+              Contact Info
+            </h1>
+            <ul
+              class="text-base md:text-xl font-extralight barlow-condensed-regular"
+            >
+              <li class="flex items-center gap-4 py-2">
+                <img
+                  src="images/phone2.svg"
+                  alt=""
+                  class="w-8 p-1 bg-white rounded-full md:p-2 md:w-11"
+                />(+30) 2241022871-2
+              </li>
+              <li class="flex items-center gap-4 py-2 md:w-auto">
+                <img
+                  src="images/marker.svg"
+                  alt=""
+                  class="w-8 p-1 bg-white rounded-full md:p-2 md:w-11"
+                />
+                <p class="w-32 md:w-auto">25is Martiou 31-35, Rhodes 851 00</p>
+              </li>
+              <li class="flex items-center gap-4 py-2">
+                <img
+                  src="images/mail.svg"
+                  alt=""
+                  class="w-8 p-1 bg-white rounded-full md:p-2 md:w-11"
+                />info@lydiahotel.gr
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:absolute md:block hidden md:-mt-[680px] md:ml-[720px]">
+          <div
+            class="barlow-condensed-regular text-base bg-[#F5F5F5] w-[600px] p-5 place-self-center"
+          >
+            <div class="text-center">
+              <p class="p-5 font-light tracking-wider">
+                ONE OF THE BEST PLACES TO RELAX & ENJOY
+              </p>
+              <h3 class="text-3xl gilda-display-regular">
+                Lydia City Hotel Rhodes
+              </h3>
+            </div>
+            <form action="submit" class="flex flex-wrap border w-[550px]">
+              <div class="flex flex-col gap-1 p-5 font-light tracking-wider">
+                <label for="name">Your Name:</label
+                ><input
+                  type="text"
+                  class="px-2 py-2 w-[230px] h-[40px] bg-white"
+                  placeholder="your name "
+                />
+              </div>
+              <div class="flex flex-col gap-1 p-5 font-light tracking-wider">
+                <label for="name">Email:</label
+                ><input
+                  type="text"
+                  class="px-2 py-2 w-[230px] h-[40px] bg-white"
+                  placeholder="Your Email ID "
+                />
+              </div>
+              <div class="flex flex-col gap-1 p-5 font-light tracking-wider">
+                <label for="name">Check In:</label
+                ><input
+                  type="date"
+                  class="px-2 py-2 w-[230px] h-[40px] bg-white"
+                  placeholder="Date "
+                />
+              </div>
+              <div class="flex flex-col gap-1 p-5 font-light tracking-wider">
+                <label for="name">Check Out:</label
+                ><input
+                  type="date"
+                  class="px-2 py-2 w-[230px] text-opacity-35 h-[40px] bg-white"
+                  placeholder="Date "
+                />
+              </div>
+              <div class="flex flex-col gap-1 p-5 font-light tracking-wider">
+                <label for="name">Rooms:</label
+                ><select
+                  name="select"
+                  id="Select"
+                  class="px-2 py-2 w-[180px] text-opacity-35 h-[40px] bg-white"
+                  placeholder="select"
+                >
+                  <option value="" class="" disabled>Select room</option>
+                  <option value="">Single room</option>
+                  <option value="">Standard double room</option>
+                  <option value="">Standard twin room</option>
+                  <option value="">Deluxe double room</option>
+                  <option value="">Studio room or apartment</option>
+                  <option value="">Junior suite</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-1 p-5 font-light tracking-wider">
+                <label for="name">Adults:</label
+                ><select
+                  name="select"
+                  id="Select"
+                  class="px-2 py-2 w-[120px] text-opacity-35 h-[40px] bg-white"
+                  placeholder="select"
+                >
+                  <option value="" class="" disabled>Select members</option>
+                  <option value="">1</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                  <option value="">5</option>
+                  <option value="">6</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-1 p-5 font-light tracking-wider">
+                <label for="name">Children:</label
+                ><select
+                  name="select"
+                  id="Select"
+                  class="px-2 py-2 w-[120px] text-opacity-35 h-[40px] bg-white"
+                  placeholder="select"
+                >
+                  <option value="" class="" disabled>Select members</option>
+                  <option value="">1</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                  <option value="">5</option>
+                  <option value="">6</option>
+                </select>
+              </div>
+            </form>
+            <div class="p-5">
+              <div class="py-3">
+                <input type="checkbox" class="gap-2" />i have read and agree
+                with the terms
+              </div>
+              <button class="w-[200px] py-2 bg-[#1E1E1E] text-white">
+                SEND
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="flex py-3 font-light barlow-condensed-regular justify-evenly"
+    >
+      <p class="w-48 text-xs md:w-auto md:text-sm">
+        We use cookies to ensure that we give you the best experience on our
+        website.
+      </p>
+      <div class="flex gap-7">
+        <p class="text-xs md:text-sm">Ok</p>
+        <p class="text-xs md:text-sm">Privacy Policy</p>
+      </div>
+    </section>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        let navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          // Change when scrolled down 50px
+          navbar.classList.add("bg-black", "bg-opacity-80", "shadow-md");
+        } else {
+          navbar.classList.remove("bg-black", "bg-opacity-80", "shadow-md");
+        }
+      });
+    </script>
+    <script>
+      let lastScrollTop = 0;
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", function () {
+        let scrollTop = window.scrollY;
+
+        if (scrollTop > lastScrollTop) {
+          // Scroll Down - Hide Navbar
+          navbar.classList.add("-translate-y-full");
+        } else {
+          // Scroll Up - Show Navbar
+          navbar.classList.remove("-translate-y-full");
+        }
+
+        lastScrollTop = scrollTop;
+      });
+    </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
